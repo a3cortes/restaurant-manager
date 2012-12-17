@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+   RewriteEngine on
+   RewriteRule    ^$ app/webroot/    [L]
+   RewriteRule    (.*) app/webroot/$1 [L]
+   Redirect 301 /contents/food.html http://shinecafe.com/breakfast.html
+   Redirect 301 /contents/functions1.html http://shinecafe.com/functions.html
+   Redirect 301 /pdf/ShineFunctions.pdf http://shinecafe.com/functions.html
+   Redirect 301 /pdf/ShineCafeDrinksMenu.pdf http://shinecafe.com/menus/drinks
+   Redirect 301 /pdf/ShineFoodMenu.pdf http://shinecafe.com/menus/mainmenu
+</IfModule>

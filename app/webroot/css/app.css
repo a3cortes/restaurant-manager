@@ -1,0 +1,90 @@
+/* Artfully masterminded by ZURB  */
+
+/* --------------------------------------------------
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Page Name 1
+:: Page Name 2
+*/
+
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+
+ul.breadcrumbs
+{
+	   background: none !important;
+    border: none !important;
+    border-left: 1px solid #7EB5D6 !important;
+}
+ul.pagination {
+	float: left !important;
+	}
+span.prev , span.next
+{
+    float:left;
+    line-height:21px;
+}
+.page-numbers
+{
+    font-style: italic;
+    font-size:.9em;
+}
+.disabled
+{
+    display:none !important;
+}
+ul.pagination li.current  {
+    background: #5588DD;
+    color: white;
+    font-weight: bold;
+    cursor: default;
+    padding:0 5px;
+    height:18px;
+}
+/* -----------------------------------------
+   Page Name 1
+----------------------------------------- */
+
+
+
+
+/* -----------------------------------------
+   Page Name 2
+----------------------------------------- */
+
+
+#container {
+	text-align: left;
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.question {
+	position: absolute;
+	display: inline;
+	text-align: center;
+	height: 78px;
+	font-size: 13px;
+	line-height: 1.5em;
+	background: url('/img/admin/bubble.png') left top no-repeat;
+	padding: 10px;
+	margin-left: -7em;
+	margin-top: -7em;
+	opacity: 0;
+	  background: -moz-linear-gradient(center top , #FFFFFF 0%, #F4F4F4 100%) repeat scroll 0 0 transparent;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+
+.title {
+	font-size: 30px;
+	margin-bottom: 1.5em;
+	font-weight: bold;
+	font-style: italic;
+	text-shadow: 0px 2px 0px #fff;
+}
+
