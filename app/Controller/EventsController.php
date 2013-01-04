@@ -13,7 +13,8 @@ class EventsController extends AppController
 
 	function index()
 	{
-		$this->set("events", $this->Event->find('all' , array('order'=>"Event.event_date", 'conditions' => array("Event.active"=>1 ))));
+		$this->set("events", $this->Event->find('all' , array('order'=>"Event.event_date", 'conditions' => array("Event.active"=>1, "Event.published"=>1 ))));
+		$this->set("title_for_layout", "Shine Cafe, Bar and Lounge. Events");
 	}
 
 

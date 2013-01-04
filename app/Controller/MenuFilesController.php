@@ -1,6 +1,7 @@
 <?php 
 
 App::import('Sanitize');
+
 class MenuFilesController extends AppController 
 {
 	function beforeFilter() 
@@ -10,8 +11,29 @@ class MenuFilesController extends AppController
 		$this->loadModel("MenuGroup");
 	}
 	
+
+	function admin_index()
+	{
+		if($this->request->is('post'))
+		{
+			debug($this->request->data);
+			if($this->request->data['MenuFile']['path']['size'] == 0)
+			{
+				$this->MenuFile->saveField("name", $this->request->data['MenuFile']['name']);
+			}else 
+			{
+				$this->MenuFile->save($this->request->data);
+			}
+			
+			$this->Session->setFlash("PDF menu added" , 'default' , array("class" => "alert-box success"));
+			$this->redirect("/admin/menuFiles");
+		}
+
+		$this->set('data', $this->MenuFile->find('all'));
+	}
+
 	
-	function admin_index($id) 
+	function admin_edit($id) 
 	{
 		$this->set('data' , $this->MenuFile->findById($id));
 		
@@ -26,8 +48,8 @@ class MenuFilesController extends AppController
 			{
 				$this->MenuFile->save($this->request->data);
 			}
-			
-			$this->redirect("/admin/menus/settings");
+			$this->Session->setFlash("PDF menu updated" , 'default' , array("class" => "alert-box success"));
+			$this->redirect("/admin/menuFiles");
 		}
 	}
 	
@@ -38,8 +60,8 @@ class MenuFilesController extends AppController
 		{
 			$this->MenuFile->delete($id);
 		}
-		$this->Session->setFlash("Menu deleted" , 'default' , array("class" => "alert-box success"));
-		$this->redirect("/admin/menus/settings");
+		$this->Session->setFlash("Menu deleted" , 'default' , array("class" => "alert-box alert"));
+		$this->redirect("/admin/menuFiles");
 	}
 	
 

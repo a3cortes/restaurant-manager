@@ -25,6 +25,7 @@ class ReservationsController extends AppController
 	{
 		
 		$this->set("events", $this->Event->find('all' , array('conditions' => array("Event.active"=>1 ))));
+		$this->set("title_for_layout", "Shine Cafe, Bar and Lounge. Make a reservation.");
 
 		$r = $this->Event->get_booking_events();
 		
@@ -50,6 +51,7 @@ class ReservationsController extends AppController
 				
 				$this->Session->setFlash("Thank you, reservation sent." , 'default' , array("class" => "alert-box success"));	
 				$this->redirect("/reservations/newbooking");
+				exit;
 			}
 			else
 			{
@@ -65,7 +67,7 @@ class ReservationsController extends AppController
 	function admin_index() 
 	{
 		  $this->paginate = array(
-        			'conditions' => array("Reservation.active"=>1 ),
+        			'conditions' => array("Reservation.active"=>1, "DATE(Reservation.booking_date) >= CURRENT_DATE" ),
         			'limit' => 10,
 					"order"=>"Reservation.booking_date ASC"
 		  		
