@@ -218,4 +218,9 @@ class MenusController extends AppController
 
 	}
 
+	function admin_setmenus()
+	{
+		
+	}
+
 }
