@@ -50,7 +50,9 @@ $this->Html->addCrumb($menuitem['MenuItem']['name'], '#');
 		<?php foreach($recent as $item){
 		if($item['MenuItem']['id'] != $menuitem['MenuItem']['id']){
 		?>
-			<li><a href="/admin/menus/itemedit/<?php echo $item['MenuItem']['id']?>" class="style1"><?php echo $item['MenuItem']['name']?></a></li>
+			<li><a href="/admin/menus/itemedit/<?php echo $item['MenuItem']['id']?>" class="style1"><?php echo $item['MenuItem']['name']?></a>
+			<span class='modified_stamp'>(<?php echo CakeTime::nice($item['MenuItem']['modified']) ?>)</span>
+			</li>
 		<?php }} ?>
 		</ul>
 	</div>
