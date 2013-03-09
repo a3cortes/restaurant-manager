@@ -18,7 +18,7 @@ $this->Html->addCrumb('Set Menus', '#');
 			<tr>
 				<td widtd="30%"><a href="/admin/setmenus/edit/<?php echo $menu['SetMenu']['id']?>"><?php echo ucfirst(strtolower($menu['SetMenu']['menu_name']))?></a></td>
 				<td widtd="10%"><?php echo $menu['SetMenu']['price']?></td>
-				<td widtd="50%">x</td>
+				<td widtd="50%"><?php echo ($menu['SetMenu']['active']? "Published":"Unpublished")?></td>
 			</tr>
 			<?php }?>
 		</table>

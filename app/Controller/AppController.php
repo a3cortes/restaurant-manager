@@ -65,7 +65,7 @@ class AppController extends Controller
 			$menuarray[$m['MenuGroup']['name']] = "/menus/".$m['MenuGroup']['id'] ."/".$m['MenuGroup']['name'];
 		}
 	  
-		//$menuarray['functions'] = "/menus/functions";
+		$menuarray['Set Menus'] = "/setmenus";
 		Security::setHash('md5');
 		$nav_array = array(
 				'Home' => 		array('/','_top', 	array())

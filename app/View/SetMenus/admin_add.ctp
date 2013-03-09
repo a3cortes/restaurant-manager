@@ -8,9 +8,12 @@ $this->Html->addCrumb('Add', '#');
 	<?php echo $this->Form->create('SetMenu',array("class"=>"custom"))?>
 
 	<div class="row" >
-		<div class="ten columns" >
+		<div class="eight columns" >
 			<?php echo $this->Form->input('menu_name'); ?>
 		</div> <!-- End #name -->
+		<div class="two columns" >
+			<?php echo $this->Form->input("active",array("type"=>"select", "label"=>"Published", "options" =>array("1" =>"Yes", "0"=>"No"),"div" =>false))?>
+		</div>
 	
 		<div class="two columns">
 			<?php echo $this->Form->input('price'); ?>
