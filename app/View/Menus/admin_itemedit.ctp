@@ -14,23 +14,47 @@ $this->Html->addCrumb($menuitem['MenuItem']['name'], '#');
 
 
 	<div class="six columns" style="margin-left: 0px">
-		<?php echo $this->Form->input("MenuItem.menu_id",array("id"=>"customDropdown", "selected"=>$menuitem['MenuItem']['menu_id'] ,"options" => $menucats ,"label"=>"Menu category", "div" =>false,"style"=>"width:100%;display:none;"))?>
+		<?php echo $this->Form->input("MenuItem.menu_id",array("id"=>"customDropdown", "selected"=>$menuitem['MenuItem']['menu_id'] ,"options" => $menucats ,"label"=>"Menu category", "div" =>false, 'class' => 'custom dropdown'))?>
 		<?php echo $this->Form->input("MenuItem.name",array("value"=>$menuitem['MenuItem']['name'] ,"label"=>"Name", "div" =>false,"style"=>"width:100%"))?>
 		<?php echo $this->Form->input("MenuItem.desc" ,array("value"=>$menuitem['MenuItem']['desc'] ,"label"=>"Description", "div" =>false,"style"=>"width:100%"))?>
-		<div class="row">
-			<div style="float: left" class="six columns">
-				<?php echo $this->Form->input("MenuItem.price1",array("value"=>$menuitem['MenuItem']['price1'] , "label"=>"Price 1"))?>
-			</div>
-			<div style="float: left;" class="six columns">
-				<?php echo $this->Form->input("MenuItem.price2",array("value"=>$menuitem['MenuItem']['price2'] , "label"=>"Price 2"))?>
-			</div>
+
+		<div class="row " >
+			<div class="six columns" >
+				<label>Price 1</label>
+				<div class="row collapse">
+					<div class='two column'>
+						<span class="prefix">$</span>
+					</div>
+					<div class="ten columns">
+						<?php echo $this->Form->input("MenuItem.price1",array("value"=>$menuitem['MenuItem']['price1'] , "label"=>false))?>
+					</div>
+				</div>
+			</div> <!-- End #name -->
+		
+			<div class="six columns" >
+				<label>Price 2</label>
+				<div class="row collapse">
+					<div class='two column'>
+						<span class="prefix">$</span>
+					</div>
+					<div class="ten columns">
+						<?php echo $this->Form->input("MenuItem.price2",array("value"=>$menuitem['MenuItem']['price1'] , "label"=>false))?>
+					</div>
+				</div>
+			</div><!-- End #name -->
 		</div>
+		
+		
+		
 		<div class="row">
 			<div style="float: left" class="three columns">
 				<?php echo $this->Form->input("MenuItem.active",array("type"=>"select","selected"=>$menuitem['MenuItem']['active'] ,"div" =>false,"options" =>array("1" =>"Yes", "0"=>"No")))?>
 			</div>
-			<div style="float: left" class="six columns">
+			<div style="float: left" class="three columns">
 				<?php echo $this->Form->input("MenuItem.order", array("value"=>$menuitem['MenuItem']['order'],"div" =>false, "label" =>"Display Order","class" =>" small"))?>
+			</div>
+			<div style="float: left" class="six columns">
+				<?php echo $this->Form->input("MenuItem.feature", array("type"=>"select","value"=>$menuitem['MenuItem']['feature'],"div" =>false, "label" =>"Feature on front page","class" =>" small","options" =>array("1" =>"Yes", "0"=>"No")))?>
 			</div>
 		</div>
 		<div class="row">

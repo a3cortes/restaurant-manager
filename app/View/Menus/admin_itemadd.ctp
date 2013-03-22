@@ -14,13 +14,31 @@ $this->Html->addCrumb('Add new', '#');
 		<?php echo $this->Form->input("MenuItem.menu_id",array("selected"=>$menuitem['Menu']['id'] ,"options" => $menucats ,"label"=>"Menu category", "div" =>false,"style"=>"width:100%"))?>
 		<?php echo $this->Form->input("MenuItem.name",array("label"=>"Name", "div" =>false,"style"=>"width:100%"))?>
 		<?php echo $this->Form->input("MenuItem.desc" ,array("label"=>"Description", "div" =>false,"style"=>"width:100%"))?>
-		<div class="row">
-			<div style="float: left" class="six columns">
-				<?php echo $this->Form->input("MenuItem.price1",array("value"=> '0.00', "label"=>"Price 1"))?>
-			</div>
-			<div style="float: left;" class="six columns">
-				<?php echo $this->Form->input("MenuItem.price2",array("value"=> '0.00', "label"=>"Price 2"))?>
-			</div>
+		<div class="row " >
+			<div class="six columns" >
+				<label>Price 1</label>
+				<div class="row collapse">
+					<div class='two column'>
+						<span class="prefix">$</span>
+					</div>
+					<div class="ten columns">
+						<?php echo $this->Form->input("MenuItem.price1",array("value"=>$menuitem['MenuItem']['price1'] , "label"=>false, 'placeholder' => 'Price 1'))?>
+					</div>
+				</div>
+			</div> <!-- End #name -->
+		
+			<div class="six columns" >
+				<label>Price 2</label>
+				<div class="row collapse">
+
+					<div class='two column'>
+						<span class="prefix">$</span>
+					</div>
+					<div class="ten columns">
+						<?php echo $this->Form->input("MenuItem.price2",array("value"=>$menuitem['MenuItem']['price1'] , "label"=>false, 'placeholder' => 'Price 2'))?>
+					</div>
+				</div>
+			</div><!-- End #name -->
 		</div>
 		<div class="row">
 			<div style="float: left" class="three columns">

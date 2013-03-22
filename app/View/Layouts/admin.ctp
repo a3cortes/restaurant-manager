@@ -49,4 +49,10 @@
 
 	<?php echo $this->element("common/admin_footer") ?>
 	</div>
+	<?php echo $this->Html->script("foundation.min") ?>
+<?php echo $this->Html->script("modernizr.foundation") ?>
+<?php echo $this->Html->script("app") ?>
+
+<?php echo $this->Html->script("jquery") ?>
+<?php echo $this->Html->script("jquery-ui-1.9.2.custom.min") ?>
 </body>
