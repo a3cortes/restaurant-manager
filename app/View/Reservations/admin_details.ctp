@@ -2,6 +2,7 @@
 $this->Html->addCrumb('Reservations', '/admin/reservations');
 $this->Html->addCrumb($reservation['Reservation']['email'], '#');
 ?>
+<?php echo $this->element("reservations/lookup")?>
 <h5>Reservation details</h5>
 <div class="row">
 	<div class="eight columns">

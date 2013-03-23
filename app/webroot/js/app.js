@@ -142,4 +142,23 @@ $(function()
         }, 'json');
     }
 
+    $("#reservation_lookup").autocomplete({
+      source : function(request, response)
+      {
+       $.post("/admin/reservations/lookup",
+       {
+        term : request.term
+       }, function(data)
+       {
+        response(data);
+       }, 'json');
+      },
+      select : function(event, ui)
+      {
+       var selectedObj = ui.item;
+       //console.log(selectedObj.id);//selected id
+       window.location.href= '/admin/reservations/details/' +selectedObj.id;
+      }
+ });
+
 })

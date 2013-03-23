@@ -1,6 +1,7 @@
 <?php 
 
 App::uses('CakeEmail', 'Network/Email');
+App::uses('CakeTime', 'Utility');
 
 class ReservationsController extends AppController 
 {
@@ -200,6 +201,28 @@ class ReservationsController extends AppController
 		$this->set("data", $this->ReservationEvent->find('all' , array("conditions"=>"active=1")));
 		
 	
+	}
+
+
+	function admin_lookup()
+	{
+		$this->autoRender = false;
+		if($this->request->is('ajax'))
+		{
+			$term = $this->request->data['term'];
+
+			$cond = array( 'or' => array( 'Reservation.name like' => '%'.$term.'%', 'Reservation.email like' => '%'.$term.'%', 'Reservation.phone like' => '%'.$term.'%'));
+			$fields = array('id', 'name', 'email', 'phone', 'booking_date');
+			$r = $this->Reservation->find('all', array('fields' => $fields, 'recursive' => -1, 'conditions' => $cond));
+			$data = array();
+			foreach($r as $row)
+			{
+				$data[] = array('id' => $row['Reservation']['id'], 'value' => $row['Reservation']['name'] .' (' . $row['Reservation']['email'] .') - '. $row['Reservation']['phone'] .' on ' . CakeTime::nice($row['Reservation']['booking_date']));
+			}
+
+			echo json_encode($data);
+
+		}
 	}
 	
 }

@@ -1,6 +1,8 @@
 <?php 
 $this->Html->addCrumb('Reservations', '#');
 ?>
+
+<?php echo $this->element("reservations/lookup")?>
 <h5>Up coming reservations</h5>
 
 <?php echo $this->element("reservations/list_full",array("reservations" => $reservations))?>
