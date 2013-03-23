@@ -35,8 +35,8 @@ App::uses('CakeTime', 'Utility');
  */
 class AppController extends Controller 
 {
-	///public $components = array('Session','Auth');
-	public $components = array('DebugKit.Toolbar',	'Session','Auth');
+	public $components = array('Session','Auth');
+	//public $components = array('DebugKit.Toolbar',	'Session','Auth');
 	
 	public $helpers = array('Form','Html', 'Session','Number');
 	

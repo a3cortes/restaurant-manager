@@ -3,6 +3,7 @@ $this->Html->addCrumb('Menus', '#');
 $this->Html->addCrumb('Online menu', '/admin/menus');
 $this->Html->addCrumb('Add Group', '#');
 ?>
+<?php echo $this->element("menus/lookup")?>
 <h5>New menu group</h5>
 <div class="row">
 	<?php echo $this->Form->create('MenuGroup',array("class"=>"nice"))?>

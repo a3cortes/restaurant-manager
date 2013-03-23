@@ -7,6 +7,6 @@
 	</div>
 	<div class="eleven columns">
 		<?php echo $this->
-		Form->input('reservation_lookup', array('label' => false,'placeholder' =>'Find a Reservation. Start Typing a Name, Email or Phone number')) ?>
+		Form->input('menu_lookup', array('label' => false,'placeholder' =>'Search Menu Items. Start Typing a Item Name')) ?>
 	</div>
 </div>

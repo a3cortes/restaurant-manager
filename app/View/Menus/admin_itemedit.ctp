@@ -5,6 +5,7 @@ $this->Html->addCrumb($menuitem['Menu']['name'], '/admin/menus/edit/'.$menuitem[
 $this->Html->addCrumb('Edit', '#');
 $this->Html->addCrumb($menuitem['MenuItem']['name'], '#');
 ?>
+<?php echo $this->element("menus/lookup")?>
 <h5>
 	<?php echo $menuitem['MenuItem']['name']?>
 </h5>

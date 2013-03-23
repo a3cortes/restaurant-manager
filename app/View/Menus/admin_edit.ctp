@@ -4,6 +4,7 @@ $this->Html->addCrumb('Online menu', '/admin/menus');
 $this->Html->addCrumb('Edit', '#');
 $this->Html->addCrumb($menus['Menu']['name'], '#');
 ?>
+<?php echo $this->element("menus/lookup")?>
 <h5><?php echo $menus['Menu']['name']?> Menu</h5>
 <div class="row">
 	<?php echo $this->Form->create('Menu',array("class"=>"custom"))?>

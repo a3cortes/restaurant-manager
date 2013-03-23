@@ -4,6 +4,7 @@ $this->Html->addCrumb('Online menu', '/admin/menus');
 $this->Html->addCrumb('Edit Group', '#');
 $this->Html->addCrumb($group['MenuGroup']['name'], '#');
 ?>
+<?php echo $this->element("menus/lookup")?>
 <h5>Edit menu group</h5>
 <div class="row">
 	<div class="twelve columns">

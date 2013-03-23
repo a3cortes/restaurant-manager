@@ -103,3 +103,10 @@ ul
 	color:#666;
 	font-style: italic;
 }
+
+.ajax-load
+{
+	background-image: url('/img/ajax-loader.gif') !important;
+	background-repeat:no-repeat !important;
+	background-position:center !important;
+}

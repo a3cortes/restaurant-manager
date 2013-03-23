@@ -2,6 +2,8 @@
 $this->Html->addCrumb('Menus', '#');
 $this->Html->addCrumb('Online menu', '#');
 ?>
+
+<?php echo $this->element("menus/lookup")?>
 <h5>Current Menus</h5>
 <a href="/admin/menus/groupadd" class="small success  button radius" style="margin-bottom: 2px">Add a menu group</a>
 <a href="/admin/menus/add" class="small success  button radius" style="margin-bottom: 2px">Add a menu</a>

@@ -218,9 +218,30 @@ class MenusController extends AppController
 
 	}
 
-	function admin_setmenus()
+
+
+	function admin_lookup()
 	{
-		
+		$this->autoRender = false;
+		if($this->request->is('ajax'))
+		{
+			$term = $this->request->data['term'];
+
+			$cond = array( 'or' => array( 'MenuItem.name like' => '%'.$term.'%'));
+			$fields = array('MenuItem.id', 'MenuItem.name', 'Menu.name');
+			$r = $this->MenuItem->find('all', array('fields' => $fields, 'recursive' => 1, 'conditions' => $cond));
+			
+			//debug($r);
+
+			$data = array();
+			foreach($r as $row)
+			{
+				$data[] = array('id' => $row['MenuItem']['id'], 'value' => $row['MenuItem']['name'] .' - '.  $row['Menu']['name']);
+			}
+
+			echo json_encode($data);
+
+		}
 	}
 
 }

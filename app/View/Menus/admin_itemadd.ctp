@@ -5,6 +5,8 @@ $this->Html->addCrumb('Online menu', '/admin/menus');
 $this->Html->addCrumb($menuitem['Menu']['name'], '/admin/menus/edit/'.$menuitem['Menu']['id']);
 $this->Html->addCrumb('Add new', '#');
 ?>
+
+<?php echo $this->element("menus/lookup")?>
 <h5>
 	Add an item to <?php echo $menuitem['Menu']['name']?>
 </h5>

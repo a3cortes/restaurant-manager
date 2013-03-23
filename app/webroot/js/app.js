@@ -145,12 +145,14 @@ $(function()
     $("#reservation_lookup").autocomplete({
       source : function(request, response)
       {
+        $('#lookup_status').removeClass('foundicon-search').parent().addClass('ajax-load');
        $.post("/admin/reservations/lookup",
        {
         term : request.term
        }, function(data)
        {
         response(data);
+        $('#lookup_status').addClass('foundicon-search').parent().removeClass('ajax-load');
        }, 'json');
       },
       select : function(event, ui)
@@ -159,6 +161,27 @@ $(function()
        //console.log(selectedObj.id);//selected id
        window.location.href= '/admin/reservations/details/' +selectedObj.id;
       }
- });
+    });
+
+        $("#menu_lookup").autocomplete({
+      source : function(request, response)
+      {
+        $('#lookup_status').removeClass('foundicon-search').parent().addClass('ajax-load');
+       $.post("/admin/menus/lookup",
+       {
+        term : request.term
+       }, function(data)
+       {
+        response(data);
+        $('#lookup_status').addClass('foundicon-search').parent().removeClass('ajax-load');
+       }, 'json');
+      },
+      select : function(event, ui)
+      {
+       var selectedObj = ui.item;
+       //console.log(selectedObj.id);//selected id
+       window.location.href= '/admin/menus/itemedit/' +selectedObj.id;
+      }
+    });
 
 })
