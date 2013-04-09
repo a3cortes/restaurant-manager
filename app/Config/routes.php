@@ -30,8 +30,8 @@
 	Router::redirect('/steaks', '/angus-steak.html');
 	
 	Router::connect('/menus/:id/:name', array('controller' => 'menus', 'action' => 'index'));
-	Router::connect('/setmenus', array('controller' => 'setmenus', 'action' => 'index'));
-	Router::connect('/setmenus/:id/:name', array('controller' => 'setmenus', 'action' => 'menu'));
+	Router::connect('/SetMenus', array('controller' => 'setMenus', 'action' => 'index'));
+	Router::connect('/SetMenus/:id/:name', array('controller' => 'setmenus', 'action' => 'menu'));
 	Router::connect('/events', array('controller' => 'events', 'action' => 'index'));
 
 	Router::connect('/', array('controller' => 'pages', 'action' => 'home'));
