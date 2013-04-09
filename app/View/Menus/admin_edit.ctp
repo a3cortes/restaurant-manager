@@ -74,3 +74,4 @@ $this->Html->addCrumb($menus['Menu']['name'], '#');
 
 	</div>
 </div>
+<?php echo $this->element('common/dialog') ?>

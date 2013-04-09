@@ -45,9 +45,9 @@
 
 function ajax_menu_delete(id , path)
 {
-    $(this).dialog({
+    $('#dialog-confirm').dialog({
         resizable: false,
-        modal: true,
+        modal: false,
         title: 'Delete Item?',
         buttons: {
             "Delete": function() {
@@ -78,7 +78,7 @@ function ajax_menu_delete(id , path)
 
 function ajax_event_delete(id , path)
 {
-    $(this).dialog({
+    $('#dialog-confirm').dialog({
         resizable: false,
         modal: true,
         title: 'Delete Event?',
@@ -163,7 +163,7 @@ $(function()
       }
     });
 
-        $("#menu_lookup").autocomplete({
+    $("#menu_lookup").autocomplete({
       source : function(request, response)
       {
         $('#lookup_status').removeClass('foundicon-search').parent().addClass('ajax-load');
@@ -183,5 +183,23 @@ $(function()
        window.location.href= '/admin/menus/itemedit/' +selectedObj.id;
       }
     });
+        
+        $('#calendar').fullCalendar({
+        
+            editable: true,
+            
+            events: "/admin/reservations/calendar",
+            
+            eventDrop: function(event, delta) {
+                alert(event.title + ' was moved ' + delta + ' days\n' +
+                    '(should probably update your database)');
+            },
+            
+            loading: function(bool) {
+                if (bool) $('#loading').show();
+                else $('#loading').hide();
+            }
+            
+        });
 
 })

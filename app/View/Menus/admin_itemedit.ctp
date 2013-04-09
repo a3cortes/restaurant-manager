@@ -27,7 +27,7 @@ $this->Html->addCrumb($menuitem['MenuItem']['name'], '#');
 						<span class="prefix">$</span>
 					</div>
 					<div class="ten columns">
-						<?php echo $this->Form->input("MenuItem.price1",array("value"=>$menuitem['MenuItem']['price1'] , "label"=>false))?>
+						<?php echo $this->Form->input("MenuItem.price1",array( "label"=>false))?>
 					</div>
 				</div>
 			</div> <!-- End #name -->
@@ -39,7 +39,7 @@ $this->Html->addCrumb($menuitem['MenuItem']['name'], '#');
 						<span class="prefix">$</span>
 					</div>
 					<div class="ten columns">
-						<?php echo $this->Form->input("MenuItem.price2",array("value"=>$menuitem['MenuItem']['price1'] , "label"=>false))?>
+						<?php echo $this->Form->input("MenuItem.price2",array('value' => '0.00', "label"=>false))?>
 					</div>
 				</div>
 			</div><!-- End #name -->
@@ -83,3 +83,5 @@ $this->Html->addCrumb($menuitem['MenuItem']['name'], '#');
 	</div>
 	<?php echo $this->Form->end();?>
 </div>
+
+<?php echo $this->element('common/dialog') ?>

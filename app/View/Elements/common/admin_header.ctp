@@ -11,6 +11,12 @@
 <?php echo $this->Html->css("general_foundicons.css")?>
 <?php echo $this->Html->css("general_foundicons_ie7.css")?>
 <?php echo $this->Html->css('blitzer/jquery-ui-1.9.2.custom') ?>
+
+<?php echo $this->Html->css('fc/fullcalendar') ?>
+<?php echo $this->Html->css('fc/fullcalendar.print') ?>
+
+
+
 <?php echo $this->Html->css('app') ?>
 
 

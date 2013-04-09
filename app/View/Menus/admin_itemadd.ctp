@@ -24,7 +24,7 @@ $this->Html->addCrumb('Add new', '#');
 						<span class="prefix">$</span>
 					</div>
 					<div class="ten columns">
-						<?php echo $this->Form->input("MenuItem.price1",array("value"=>$menuitem['MenuItem']['price1'] , "label"=>false, 'placeholder' => 'Price 1'))?>
+						<?php echo $this->Form->input("MenuItem.price1",array("value"=>'0.00' , "label"=>false, 'placeholder' => 'Price 1'))?>
 					</div>
 				</div>
 			</div> <!-- End #name -->
@@ -37,7 +37,7 @@ $this->Html->addCrumb('Add new', '#');
 						<span class="prefix">$</span>
 					</div>
 					<div class="ten columns">
-						<?php echo $this->Form->input("MenuItem.price2",array("value"=>$menuitem['MenuItem']['price1'] , "label"=>false, 'placeholder' => 'Price 2'))?>
+						<?php echo $this->Form->input("MenuItem.price2",array("value"=>'0.00' , "label"=>false, 'placeholder' => 'Price 2'))?>
 					</div>
 				</div>
 			</div><!-- End #name -->
@@ -47,7 +47,7 @@ $this->Html->addCrumb('Add new', '#');
 				<?php echo $this->Form->input("MenuItem.active",array("type"=>"select","div" =>false,"options" =>array("1" =>"Yes", "0"=>"No")))?>
 			</div>
 			<div style="float: left" class="six columns">
-				<?php echo $this->Form->input("MenuItem.order", array("value"=> 1, "div" =>false, "label" =>"Display Order","class" =>" small"))?>
+				<?php echo $this->Form->input("MenuItem.order", array("value"=> '1', "div" =>false, "label" =>"Display Order","class" =>" small"))?>
 			</div>
 		</div>
 		<div class="row">

@@ -6,10 +6,9 @@
 
 <div class="row">
     <div class="eight columns">
-        <p>some content goes here</p>
+        <p><?php echo $this->Html->image('structure.png') ?></p>
     </div>
 
        <div class="four columns">
-             <p>a side bar </p>
     </div>
 </div>

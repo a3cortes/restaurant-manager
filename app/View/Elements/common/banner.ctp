@@ -9,13 +9,13 @@
 					</div>
 					<div class="slider">
 						<ul class="items">
+							<li><img src="<?php echo($this->viewVars['wwwroot'])?>images/slide7.jpg" alt=""></li>
 							<li><img src="<?php echo($this->viewVars['wwwroot'])?>images/slide3.jpg" alt=""></li>
 							<li><img src="<?php echo($this->viewVars['wwwroot'])?>images/slide1.jpg" alt=""></li>
 							<li><img src="<?php echo($this->viewVars['wwwroot'])?>images/slide2.jpg" alt=""></li>
 							<li><img src="<?php echo($this->viewVars['wwwroot'])?>images/slide4.jpg" alt=""></li>
 							<li><img src="<?php echo($this->viewVars['wwwroot'])?>images/slide5.jpg" alt=""></li>
 							<li><img src="<?php echo($this->viewVars['wwwroot'])?>images/slide6.jpg" alt=""></li>
-							<li><img src="<?php echo($this->viewVars['wwwroot'])?>images/slide7.jpg" alt=""></li>
 						</ul>
 					</div>
 					<div class="nav-left-bg">

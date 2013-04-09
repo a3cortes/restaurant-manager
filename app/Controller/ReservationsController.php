@@ -224,5 +224,24 @@ class ReservationsController extends AppController
 
 		}
 	}
+
+	function admin_calendar()
+	{
+		$this->autoRender = false;
+
+		$fields = array('id', 'name', 'booking_date');
+		$r = $this->Reservation->find('all', array('recursive' =>0, 'fields' =>$fields));
+		$path = '/admin/reservations/details/';
+
+		foreach ($r as $row) 
+		{
+			$out[] = array('id' => $row['Reservation']['id'], 
+											'title' => $row['Reservation']['name'], 
+											'start' => date('Y-m-d H:i', strtotime($row['Reservation']['booking_date'])), 
+											'url' => $path.$row['Reservation']['id']);
+		}
+
+		echo json_encode($out);
+	}
 	
 }

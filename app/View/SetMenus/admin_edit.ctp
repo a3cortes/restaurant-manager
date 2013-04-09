@@ -1,6 +1,6 @@
 <?php 
 $this->Html->addCrumb('Menu', '#');
-$this->Html->addCrumb('Set Menus', '/admin/setmenus');
+$this->Html->addCrumb('Set Menus', '/admin/SetMenus');
 $this->Html->addCrumb('Edit', '#');
 ?>
 

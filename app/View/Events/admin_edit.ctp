@@ -100,6 +100,7 @@ $this->Html->addCrumb('Edit event', '#');
     </div>
 </div>
 <?php echo $this->Form->end() ?>
+<?php echo $this->element('common/dialog') ?>
 <script>
     $(function()
     {

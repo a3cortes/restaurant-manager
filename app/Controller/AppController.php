@@ -48,7 +48,7 @@ class AppController extends Controller
 		
 		parent::beforeFilter();
 		
-		$this->Auth->allow('*');
+		//$this->Auth->allow('*');
 		if (isset($this->request->params['prefix']) && $this->request->params['prefix'] == 'admin')
 		{
 			$this->layout = 'admin';
@@ -65,7 +65,7 @@ class AppController extends Controller
 			$menuarray[$m['MenuGroup']['name']] = "/menus/".$m['MenuGroup']['id'] ."/".$m['MenuGroup']['name'];
 		}
 	  
-		$menuarray['Set Menus'] = "/setmenus";
+		$menuarray['Set Menus'] = "/SetMenus";
 		Security::setHash('md5');
 		$nav_array = array(
 				'Home' => 		array('/','_top', 	array())

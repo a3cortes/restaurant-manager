@@ -8,7 +8,7 @@
 						<a href="#">Menus</a> <a href="#" class="flyout-toggle"><span> </span> </a>
 							<ul class="flyout">
 								<li><a href="/admin/menus">Online Menus</a></li>
-								<li><a href="/admin/setmenus">Set Menus</a></li>
+								<li><a href="/admin/SetMenus">Set Menus</a></li>
 								<li><a href="/admin/menus/settings">PDF Menus</a></li>
 							</ul>
 					</li>

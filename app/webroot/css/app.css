@@ -110,3 +110,35 @@ ul
 	background-repeat:no-repeat !important;
 	background-position:center !important;
 }
+
+/** CAl */
+
+
+#calendar h2
+{
+ font-size: 1.4em;
+}
+
+#calendar table.fc-header
+{
+	border:none;
+	margin-bottom: 5px;
+}
+.fc-event-inner, .fc-event 
+{
+	background-color: #eee;
+	border-color: #ccc;
+}
+.fc-event-title
+{
+	color:#2BA6CB;
+}
+.fc-event-time
+{
+		color:#2BA6CB;
+		font-weight: 600;
+}
+#dialog-confirm
+{
+	display: none;
+}
