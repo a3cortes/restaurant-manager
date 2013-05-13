@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 13, 2013 at 06:14 AM
+-- Generation Time: May 13, 2013 at 06:17 AM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.4.3
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `shinecafe`
+-- Database: `restaurant`
 --
 
 -- --------------------------------------------------------
@@ -39,7 +39,6 @@ CREATE TABLE IF NOT EXISTS `events` (
   `details` text,
   `path` text,
   `event_date` datetime DEFAULT NULL,
-  `repeat` tinyint(4) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
@@ -47,11 +46,11 @@ CREATE TABLE IF NOT EXISTS `events` (
 -- Dumping data for table `events`
 --
 
-INSERT INTO `events` (`id`, `name`, `created`, `modified`, `published`, `active`, `reservation_count`, `user_id`, `booking`, `details`, `path`, `event_date`, `repeat`) VALUES
-(1, 'Kotthu party', '0000-00-00 00:00:00', '2012-12-01 07:21:17', 1, 1, 13, 9, 0, 'dasda', 'asdadadad', '2013-01-03 13:30:00', 0),
-(10, 'TEST2', '2012-11-30 12:40:37', '2012-12-01 06:42:35', 0, 1, 0, 9, 0, 'daadada add asd ', 'flights.pdf', '2013-01-05 00:00:00', 0),
-(11, 'asdadasdadas', '2012-11-30 13:32:42', '2012-11-30 13:38:05', 1, 0, 0, 9, 1, 'asdasda ada as da', 'final_teapot 5.pdf', NULL, 0),
-(12, 'asda', '2012-12-01 07:24:11', '2012-12-01 07:24:11', 1, 1, 1, 9, 1, 'dasda', '', '2012-12-01 14:45:00', 0);
+INSERT INTO `events` (`id`, `name`, `created`, `modified`, `published`, `active`, `reservation_count`, `user_id`, `booking`, `details`, `path`, `event_date`) VALUES
+(1, 'Kotthu party', '0000-00-00 00:00:00', '2012-12-17 00:22:27', 1, 1, 18, 9, 0, 'dasda', '', '2013-01-03 13:30:00'),
+(10, 'TEST2', '2012-11-30 12:40:37', '2012-12-17 01:05:03', 0, 0, 0, 9, 0, 'daadada add asd ', 'flights.pdf', '2013-01-05 00:00:00'),
+(11, 'asdadasdadas', '2012-11-30 13:32:42', '2012-12-17 01:21:11', 1, 0, 0, 9, 1, 'asdasda ada as da', 'final_teapot 5.pdf', NULL),
+(12, 'asda', '2012-12-01 07:24:11', '2012-12-17 21:21:13', 1, 0, 0, 9, 1, 'dasda', '', '2012-12-01 14:45:00');
 
 -- --------------------------------------------------------
 
@@ -82,7 +81,6 @@ INSERT INTO `menus` (`id`, `name`, `desc`, `group_id`, `isSpecial`, `created`, `
 (1, 'THIN CRUST Wood FIRed oveN PIzza', '', 4, 7, '2012-07-18 00:18:19', '2012-07-18 10:18:19', 9, 7, 1, 0),
 (2, 'GoURMeT PIzzas', '', 4, 8, '2012-07-18 00:19:47', '2012-07-18 10:19:47', 2, 9, 1, 0),
 (3, 'Wood Fired oven Calzone ', '', 4, 9, '2012-06-03 09:04:25', '2012-06-03 09:04:25', 1, 10, 1, 0),
-(4, 'Lighter Meals', '', 4, 3, '2012-06-03 09:03:18', '2012-06-03 09:03:18', 5, 4, 1, 0),
 (5, 'Pasta & Risotto', '', 4, 5, '2012-06-03 09:03:46', '2012-06-03 09:03:46', 5, 5, 1, 0),
 (6, 'Sides', '', 4, 6, '2012-06-03 09:04:10', '2012-06-03 09:04:10', 5, 8, 1, 0),
 (7, 'appetisers', '', 4, 4, '2012-06-03 09:03:10', '2012-06-03 09:03:10', 8, 3, 1, 0),
@@ -91,9 +89,7 @@ INSERT INTO `menus` (`id`, `name`, `desc`, `group_id`, `isSpecial`, `created`, `
 (10, 'Breakfast', '', 5, 1, '2012-06-07 02:26:44', '0000-00-00 00:00:00', 16, 0, 1, 0),
 (11, 'Lunch', '', 4, 1, '2012-10-18 00:26:56', '2012-06-03 09:02:52', 5, 1, 1, 0),
 (16, 'Weekly Specials', '', 6, 1, '2012-06-14 07:49:00', '2012-06-14 17:49:00', 27, 0, 1, 0),
-(17, 'Beers', '', 3, 100, '2012-10-24 08:31:45', '2012-10-24 08:31:45', 18, 0, 1, 9),
-(18, 'Hot Drinks', '', 3, 1, '2012-06-03 08:15:46', '0000-00-00 00:00:00', 7, 0, 1, 0),
-(19, 'Cold Drinks', '', 3, 2, '2012-06-03 08:15:52', '0000-00-00 00:00:00', 9, 0, 1, 0),
+(19, 'Cold Drinks', 'Ice cold drinks', 3, 2, '2013-04-08 01:24:44', '2012-12-03 10:40:02', 8, 0, 1, 9),
 (20, 'LIQUEUR COFFEES', '', 3, 100, '2012-06-03 08:15:59', '0000-00-00 00:00:00', 4, 0, 1, 0),
 (21, 'FLAVOURED COFFEES', '', 3, 100, '2012-06-03 08:16:06', '0000-00-00 00:00:00', 4, 0, 1, 0),
 (22, 'Cocktails', '', 3, 100, '2012-06-03 08:16:16', '0000-00-00 00:00:00', 10, 0, 1, 0),
@@ -129,7 +125,8 @@ CREATE TABLE IF NOT EXISTS `menu_files` (
 --
 
 INSERT INTO `menu_files` (`id`, `name`, `path`, `created`, `modified`, `dir`, `size`, `user_id`) VALUES
-(2, 'Inv 30', 'Invoice 30.pdf', '0000-00-00 00:00:00', '2013-01-03 16:19:42', '', '19694', 9);
+(1, 'asdad', 'final_teapot 5.pdf', '2012-11-30 13:40:59', '2012-11-30 13:40:59', '', '279935', 9),
+(2, 'Test', 'flights.pdf', '2012-12-03 08:53:24', '2012-12-03 08:53:24', '', '30581', 9);
 
 -- --------------------------------------------------------
 
@@ -153,9 +150,8 @@ CREATE TABLE IF NOT EXISTS `menu_groups` (
 --
 
 INSERT INTO `menu_groups` (`id`, `name`, `order`, `created`, `modified`, `menu_menu_count`, `user_id`) VALUES
-(3, 'Drinks & Cocktails', 0, '2012-10-24 08:31:50', '2012-10-24 08:31:50', 0, 9),
+(3, 'Drinks & Cocktails', 0, '2012-12-03 09:01:24', '2012-12-03 09:01:24', 0, 9),
 (4, 'Main Menu', 0, '2012-06-01 20:55:51', '2012-06-02 06:55:51', 0, 0),
-(5, 'Breakfast', 0, '2012-10-17 15:03:51', '2012-10-17 15:03:51', 0, 0),
 (6, 'Specials', 0, '2012-07-03 05:56:16', '2012-07-03 15:56:16', 0, 0);
 
 -- --------------------------------------------------------
@@ -260,10 +256,6 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `name`, `desc`, `price1`, `price2`, `
 (75, 16, 'Beef Rendang Curry', 'Accompanied with vegetables, Saffron rice, Roti and Prawn crackers', 25.9, 0, 0, 1000, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0),
 (76, 16, 'Lovers Delight', 'Double Baked Pistachio Chocolate Brownie topped w Choux pastry hearts filled w Strawberry Mousse', 11.9, 0, 0, 1000, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0),
 (77, 16, 'Delicious Cakes', 'Chocolate Mud,\r\nBaked Cheese,\r\nSticky Date,\r\nTim Tam,\r\nLemon Meringue,\r\nBaileys,\r\nFlourless Orange,\r\nTiramisu,\r\nLemon Tart,\r\nStrawberry Cheese,\r\nApple Crumble,\r\nWhite & Dark Choc Mousse,\r\nCookies ''n'' Cream,\r\nMars Bar', 7.9, 0, 1, 1001, '2012-06-04 09:29:42', '2012-06-04 19:29:42', 0, 0),
-(79, 17, 'Crown Lager', 'Australian', 7, 0, 1, 1000, '2012-10-24 08:31:43', '2012-10-24 08:31:43', 0, 9),
-(80, 17, 'Victoria Bitter, Pure Blonde, Carlton Draught, James Boags', 'Australian', 6.5, 0, 1, 1000, '2012-06-03 08:04:37', '0000-00-00 00:00:00', 0, 0),
-(81, 17, 'Cascade Premium Light', 'Australian', 6, 0, 1, 1000, '2012-06-03 08:04:46', '0000-00-00 00:00:00', 0, 0),
-(83, 17, 'Coopers Sparkling Ale', 'HAND CRAFTED BEERS', 7, 0, 1, 1000, '2012-06-03 08:05:09', '0000-00-00 00:00:00', 0, 0),
 (84, 17, 'Beez Neez', 'HAND CRAFTED BEERS', 7, 0, 1, 1000, '2012-06-03 08:05:09', '0000-00-00 00:00:00', 0, 0),
 (85, 17, 'Little Creature Pale Ale', 'HAND CRAFTED BEERS', 7, 0, 1, 1000, '2012-06-03 08:05:09', '0000-00-00 00:00:00', 0, 0),
 (86, 17, 'Lord Nelson Three Sheets Pale Ale ', 'HAND CRAFTED BEERS', 7, 0, 1, 1000, '2012-06-03 08:05:09', '0000-00-00 00:00:00', 0, 0),
@@ -287,7 +279,6 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `name`, `desc`, `price1`, `price2`, `
 (105, 18, 'HERBAL TEA', 'Chamomile, Jasmine, Peppermint', 3.5, 0, 1, 1000, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0),
 (106, 19, 'SOFT DRINKS IN BOTTLE', 'Coca Cola, Sprite, Lift, Diet Coke, Coke Zero & Fanta', 3.75, 0, 1, 1000, '2012-06-03 08:15:52', '2012-06-03 08:15:52', 0, 0),
 (107, 19, 'LEMON LIME & BITTERS', '', 3.7, 0, 1, 1000, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0),
-(108, 19, 'RASPBERRY', '', 3.5, 0, 1, 1000, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0),
 (109, 19, 'ICED-COFFEE', ' ICED-CHOCOLATE, ICED-MOCHA', 5.2, 0, 1, 1000, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0),
 (110, 19, 'NES-ICED TEA', 'Peach Or Lemon & Lime', 4.1, 0, 1, 1000, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0),
 (111, 19, 'MOUNT FRANKLIN MINERAL WATER', '(Lightly Sparkling Or Still)', 3, 0, 1, 1000, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0),
@@ -392,21 +383,21 @@ CREATE TABLE IF NOT EXISTS `reservations` (
   `event_id` int(10) unsigned NOT NULL,
   `user_id` int(10) unsigned DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=52 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=54 ;
 
 --
 -- Dumping data for table `reservations`
 --
 
 INSERT INTO `reservations` (`id`, `name`, `email`, `phone`, `group_size`, `booking_date`, `comments`, `confirmed`, `active`, `created`, `modified`, `confirmed_on`, `event_id`, `user_id`) VALUES
-(6, 'TEST', 'heshanh@gmail.com', '0450399223', 10, '2012-11-22 12:00:00', '', 1, 1, '2012-12-03 11:03:11', '2012-10-17 11:30:29', '2012-10-22 11:22:06', 1, 0),
+(6, 'asd', 'heshanh@gmail.com', '0450399223', 10, '2012-11-22 12:00:00', '', 1, 0, '2012-12-03 11:06:52', '2012-12-03 11:06:52', '2012-10-22 11:22:06', 1, 0),
 (7, 'asdasd', 'heshanh@gmail.com', '0450399223', 10, '2012-11-22 12:00:00', '', 1, 1, '2012-11-01 01:21:36', '2012-10-17 11:31:34', '2012-11-01 01:24:45', 3, 9),
 (8, 'aasdsda', 'heshanh@gmail.com', '0450399223', 10, '2012-11-22 12:00:00', 'eqwe', 1, 1, '2012-11-01 01:21:36', '2012-10-18 08:17:34', '2012-11-01 01:24:51', 2, 9),
 (9, 'wqe', 'heshanh@gmail.com', '0450399223', 10, '2012-11-22 12:00:00', 'asd', 1, 1, '2012-11-01 01:21:36', '2012-10-18 08:18:04', '2012-10-22 11:21:49', 1, 0),
-(10, 'wqe', 'heshanh@gmail.com', '0450399223', 10, '2012-11-22 12:00:00', 'asd', 0, 1, '2012-11-01 01:21:36', '2012-10-18 08:18:13', NULL, 2, 0),
+(10, 'wqe', 'heshanh@gmail.com', '0450399223', 10, '2012-11-22 12:00:00', 'asd', 1, 1, '2012-11-01 01:21:36', '2012-10-18 08:18:13', '2012-12-03 14:39:09', 2, 9),
 (11, 'wqe', 'heshanh@gmail.com', '0450399223', 10, '2012-11-22 12:00:00', 'asd', 1, 1, '2012-11-01 01:21:36', '2012-10-18 08:53:56', NULL, 3, 0),
 (12, 'wqe', 'heshanh@gmail.com', '0450399223', 12, '2012-11-22 12:00:00', '', 1, 1, '2012-11-01 01:21:36', '2012-10-18 12:43:07', '2012-10-22 11:21:01', 2, 0),
-(13, 'asdasd', 'heshanh@gmail.com', '0450399223', 10, '2012-11-22 12:00:00', 'asd', 0, 1, '2012-11-01 01:21:36', '2012-10-22 05:23:50', NULL, 7, 0),
+(13, 'asdasd', 'heshanh@gmail.com', '0450399223', 10, '2012-11-22 12:00:00', 'asd', 1, 1, '2012-11-01 01:21:36', '2012-10-22 05:23:50', '2012-12-03 14:39:56', 7, 9),
 (14, 'asdasd', 'heshanh@gmail.com', '0450399223', 10, '2012-11-22 12:00:00', 'asd', 0, 1, '2012-11-01 01:21:36', '2012-10-22 05:24:25', NULL, 7, 0),
 (15, 'asdasd', 'heshanh@gmail.com', '0450399223', 10, '2012-11-22 12:00:00', 'asd', 0, 1, '2012-11-01 01:21:36', '2012-10-22 05:24:43', NULL, 7, 0),
 (31, 'asdasd', 'heshanh@gmail.com', '0450399223', 10, '2012-11-22 12:00:00', 'asd', 0, 1, '2012-11-01 01:21:36', '2012-10-22 06:37:43', NULL, 1, 0),
@@ -426,44 +417,12 @@ INSERT INTO `reservations` (`id`, `name`, `email`, `phone`, `group_size`, `booki
 (45, 'Hesh', 'heshanh@gmail.com', '04', 10, '2012-12-08 12:15:00', 'asdasda', 0, 1, '2012-11-30 02:47:20', '2012-11-30 13:47:20', NULL, 1, 9),
 (46, 'Hesh', 'heshanh@gmail.com', '04', 10, '2012-12-08 12:15:00', 'asdasda', 0, 1, '2012-11-30 02:47:38', '2012-11-30 13:47:38', NULL, 1, 9),
 (47, 'Hesh', 'heshanh@gmail.com', '04', 10, '2012-12-08 12:15:00', 'asdasda', 0, 1, '2012-11-30 02:47:43', '2012-11-30 13:47:43', NULL, 1, 9),
-(48, 'adsa', 'qdaada@asd.com', '0450', 10, '2012-12-08 12:00:00', 'asdasd', 0, 1, '2013-01-03 06:09:14', '2013-01-03 17:09:14', NULL, 0, 9),
-(49, 'adsa', 'qdaada@asd.com', '0450', 10, '2012-12-08 12:00:00', 'asdasd', 0, 1, '2013-01-03 06:10:03', '2013-01-03 17:10:03', NULL, 0, 9),
-(50, 'adsa', 'qdaada@asd.com', '0450', 10, '2012-12-08 12:00:00', 'asdasd', 0, 1, '2013-01-03 06:10:26', '2013-01-03 17:10:26', NULL, 0, 9),
-(51, 'adsa', 'qdaada@asd.com', '0450', 10, '2012-12-08 12:00:00', 'asdasd', 0, 1, '2013-01-03 06:11:04', '2013-01-03 17:11:04', NULL, 12, 9);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `reservation_events`
---
-
-CREATE TABLE IF NOT EXISTS `reservation_events` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  `created` datetime NOT NULL,
-  `modified` datetime NOT NULL,
-  `published` tinyint(3) unsigned NOT NULL DEFAULT '1',
-  `active` tinyint(3) unsigned NOT NULL DEFAULT '1',
-  `reservation_count` int(10) unsigned NOT NULL,
-  `user_id` int(10) unsigned NOT NULL DEFAULT '0',
-  `start` datetime NOT NULL,
-  `end` datetime NOT NULL,
-  `all_year` tinyint(3) unsigned NOT NULL DEFAULT '1',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
-
---
--- Dumping data for table `reservation_events`
---
-
-INSERT INTO `reservation_events` (`id`, `name`, `created`, `modified`, `published`, `active`, `reservation_count`, `user_id`, `start`, `end`, `all_year`) VALUES
-(1, 'Fathers day', '0000-00-00 00:00:00', '2012-10-23 03:25:57', 0, 1, 6, 9, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
-(2, 'Mothers day', '0000-00-00 00:00:00', '2012-10-28 12:32:21', 0, 1, 3, 9, '2012-10-01 00:00:00', '2012-10-31 00:00:00', 0),
-(3, 'Christmas party', '0000-00-00 00:00:00', '2012-10-18 12:45:52', 1, 0, 2, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
-(6, 'test', '2012-10-18 12:36:51', '2012-10-18 12:44:59', 1, 0, 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
-(7, 'General Booking', '2012-10-18 12:39:12', '2012-10-28 12:25:14', 1, 1, 9, 9, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1),
-(8, 'Function Booking', '2012-10-18 12:46:22', '2012-10-18 12:46:22', 1, 1, 4, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1),
-(9, 'Test event', '2012-10-28 12:50:35', '2012-11-01 05:01:54', 1, 1, 0, 9, '2012-01-11 00:00:00', '1970-01-01 00:00:00', 1);
+(48, 'asdasda', 'qdaada@asd.com', '123', 10, '1970-01-01 14:30:00', 'asasdd', 1, 1, '2012-12-05 13:01:45', '2012-12-06 00:01:45', '2012-12-06 00:58:23', 1, 9),
+(49, 'asdasd', 'heshanh@gmail.com', '0450', 12, '2012-10-18 13:15:00', 'asdadada', 0, 1, '2012-12-05 13:20:30', '2012-12-06 00:20:30', NULL, 1, NULL),
+(50, 'asdasdasd', 'heshanh@gmail.com', '0450', 12, '2012-10-27 12:00:00', 'asda', 0, 1, '2012-12-05 13:21:30', '2012-12-06 00:21:30', NULL, 1, NULL),
+(51, 'asdasda', 'heshanh@gmail.com', '123', 12, '2012-10-18 12:00:00', 'ada', 0, 1, '2012-12-05 13:22:14', '2012-12-06 00:22:14', NULL, 1, NULL),
+(52, 'asdasda', 'heshanh@gmail.com', '123', 12, '2012-10-24 12:00:00', 'asdad', 0, 1, '2012-12-05 13:53:37', '2012-12-06 00:53:37', NULL, 1, NULL),
+(53, 'asdasda', 'heshanh@gmail.com', '123', 12, '1970-01-01 12:00:00', 'asda', 1, 1, '2012-12-05 13:54:09', '2012-12-06 00:54:09', '2012-12-06 00:54:50', 1, 9);
 
 -- --------------------------------------------------------
 
@@ -479,19 +438,20 @@ CREATE TABLE IF NOT EXISTS `settings` (
   `modified` datetime NOT NULL,
   `user_id` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `settings`
 --
 
 INSERT INTO `settings` (`id`, `setting`, `setting_val`, `created`, `modified`, `user_id`) VALUES
-(1, 'name', 'Shine Cafe, Bar & Lounge', '0000-00-00 00:00:00', '2012-10-23 03:25:41', 9),
-(2, 'phone', '(03) 9561 1888 ', '0000-00-00 00:00:00', '2012-10-23 03:25:41', 9),
-(3, 'address', '74-76 Kingsway Glen Waverley VIC 3150 ', '0000-00-00 00:00:00', '2012-10-23 03:25:41', 9),
-(4, 'email_from', 'info@shinecafe.com', '0000-00-00 00:00:00', '2012-10-23 03:25:41', 9),
-(5, 'admin_email', 'functions@shinecafe.com', '0000-00-00 00:00:00', '2012-10-23 03:25:41', 9),
-(6, 'contact_email', 'functions@shinecafe.com', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0);
+(1, 'name', 'My Super Awesome Cafe', '0000-00-00 00:00:00', '2012-12-17 22:11:47', 9),
+(2, 'phone', '(03) 1234 5678 ', '0000-00-00 00:00:00', '2012-12-17 22:11:47', 9),
+(3, 'address', '1 Burke St, Melbourne 3000', '0000-00-00 00:00:00', '2012-12-17 22:11:47', 9),
+(4, 'email_from', 'info@mycafe.com.au', '0000-00-00 00:00:00', '2012-12-17 22:11:47', 9),
+(5, 'admin_email', 'admin@mycafe.com.au', '0000-00-00 00:00:00', '2012-12-17 22:11:47', 9),
+(6, 'google_analytic_account', '1111', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
+(7, 'google_analytic_domain', 'mydomain', '0000-00-00 00:00:00', '2012-12-17 22:11:47', 9);
 
 -- --------------------------------------------------------
 
@@ -509,7 +469,15 @@ CREATE TABLE IF NOT EXISTS `set_menus` (
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `set_menus`
+--
+
+INSERT INTO `set_menus` (`id`, `menu_name`, `menu_details`, `price`, `group_size`, `active`, `created`, `modified`) VALUES
+(1, 'Test', '<h3>adsdd</h3>\r\n\r\n<p>asdasd</p>\r\n\r\n<ul>\r\n	<li>asda</li>\r\n	<li>asd</li>\r\n	<li>asdads asd</li>\r\n	<li>asdad</li>\r\n</ul>\r\n', 50.99, 5, 1, '0000-00-00 00:00:00', '2013-03-06 11:17:33'),
+(2, 'Test', '<h6>adsdd</h6>\r\n\r\n<p>asdasd</p>\r\n\r\n<ul>\r\n	<li>asda</li>\r\n	<li>asd</li>\r\n	<li>asdads asd</li>\r\n	<li>asdad</li>\r\n</ul>\r\n', 50.99, 5, 0, '0000-00-00 00:00:00', '2013-03-09 12:39:56');
 
 -- --------------------------------------------------------
 
@@ -534,8 +502,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `password`, `created`, `modified`, `active`, `lastlogin`) VALUES
-(8, 'Hesh', 'hesh', '83044d1d4d40113644d1c69dad5fc2bef58f7a90', '2012-10-28 10:48:43', '2012-10-28 10:48:43', 1, '0000-00-00 00:00:00'),
-(9, 'Shine Cafe admin', 'admin2', '29ed89a3f1b58f2a5aadbb3544461dff', '2013-04-08 01:09:00', '2013-04-08 01:09:00', 1, '2013-04-08 01:09:00'),
+(8, 'Hesh', 'hesh', '83044d1d4d40113644d1c69dad5fc2bef58f7a90', '2012-12-03 11:15:48', '2012-12-03 11:15:48', 1, '0000-00-00 00:00:00'),
+(9, 'Admin User', 'admin', '4f697e97fdf1c041077fcfe62d34908f', '2013-04-08 00:40:43', '2013-04-08 00:40:43', 1, '2013-04-08 00:40:43'),
 (10, 'test', 'TEST', '49a016a5837b57539d32f77c124c260a', '2012-10-28 10:52:00', '2012-10-28 10:52:00', 0, '0000-00-00 00:00:00');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
